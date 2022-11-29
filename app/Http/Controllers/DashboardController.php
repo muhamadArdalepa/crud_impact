@@ -8,6 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('index')->with('title', 'Dashboard');
+        return view('index')->with('title', 'Dashboard')->with('menu', 'dashboard');
     }
 }

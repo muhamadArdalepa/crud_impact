@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/data', [CharController::class, 'data']);
-Route::resource('char', CharController::class, ['except' => ['create', 'edit']]);
+// Route::resource('char', CharController::class, ['except' => ['create', 'edit']]);
+
+Route::get('/char', [CharController::class, 'index']);

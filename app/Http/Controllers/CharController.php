@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Char;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,31 @@ class CharController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function data()
+    {
+        $chars = Char::all();
+        return datatables()
+            ->of($chars)
+            ->addColumn('action', function ($char) {
+                return '
+                <div class="btn-group"><button type="button" onclick="editForm(`' .  $char->id . '`)" class="btn btn-warning btn-sm"data-bs-toggle="modal" data-bs-target="#ModalEdit">Edit</button><button type="button" onclick="delete(`' . $char->id . '`)" class="btn btn-danger btn-sm">Delete</button>
+            ';
+            })
+            ->editColumn('rarity', function ($char) {
+                $star = '';
+                $n = $char == '4' ? 4 : 5;
+                for ($i = 0; $i < $n; $i++) {
+                    $star .= '<i class="fas fa-star color-warning"></i>';
+                }
+                return $star;
+            })
+            ->rawColumns(['action', 'rarity'])
+            ->addIndexColumn()
+            ->make(true);
+    }
     public function index()
     {
-        $chars = Char::select('*');
-        return datatables()->of($chars)->addIndexColumn()->make(true);
+        return view('char.index')->with('title', 'Character Table')->with('menu', 'char');
     }
 
     /**

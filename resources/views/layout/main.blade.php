@@ -2,245 +2,267 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>{{$title}}</title>
-    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="/img/icon.ico" type="image/x-icon" />
 
-    <!-- Fonts and icons -->
-    <script src="/js/plugin/webfont/webfont.min.js"></script>
-    <script>
-        WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/css/fonts.min.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-    </script>
+    <!-- Custom fonts for this template-->
+    <link href="/sbadmin2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/atlantis.min.css">
+    <!-- Custom styles for this template-->
+    <link href="/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
+
+    @if ($menu==='char')
+
+    <!-- Custom styles for this page -->
+    <link href="/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    @else
+
+    @endif
 </head>
 
-<body>
-    <div class="wrapper">
-        <div class="main-header">
-            <!-- Logo Header -->
-            <div class="logo-header" data-background-color="blue">
+<body id="page-top">
 
-                <a href="index.html" class="logo">
-                    <img src="/img/logo.svg" alt="navbar brand" class="navbar-brand">
-                </a>
-                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
-                    data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">
-                        <i class="icon-menu"></i>
-                    </span>
-                </button>
-                <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
-                <div class="nav-toggle">
-                    <button class="btn btn-toggle toggle-sidebar">
-                        <i class="icon-menu"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- End Logo Header -->
-
-            <!-- Navbar Header -->
-            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-
-                <div class="container-fluid">
-                    <div class="collapse" id="search-nav">
-                        <form class="navbar-left navbar-form nav-search mr-md-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button type="submit" class="btn btn-search pr-1">
-                                        <i class="fa fa-search search-icon"></i>
-                                    </button>
-                                </div>
-                                <input type="text" placeholder="Search ..." class="form-control">
-                            </div>
-                        </form>
-                    </div>
-                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                        <li class="nav-item toggle-nav-search hidden-caret">
-                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button"
-                                aria-expanded="false" aria-controls="search-nav">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown hidden-caret">
-                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
-                                aria-expanded="false">
-                                <div class="avatar-sm">
-                                    <img src="/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user animated fadeIn">
-                                <div class="dropdown-user-scroll scrollbar-outer">
-                                    <li>
-                                        <div class="user-box">
-                                            <div class="avatar-lg"><img src="/img/profile.jpg" alt="image profile"
-                                                    class="avatar-img rounded"></div>
-                                            <div class="u-text">
-                                                <h4>Hizrian</h4>
-                                                <p class="text-muted">hello@example.com</p><a href="profile.html"
-                                                    class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Logout</a>
-                                    </li>
-                                </div>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- End Navbar -->
-        </div>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
         <!-- Sidebar -->
-        <div class="sidebar sidebar-style-2">
-            <div class="sidebar-wrapper scrollbar scrollbar-inner">
-                <div class="sidebar-content">
-                    <div class="user">
-                        <div class="avatar-sm float-left mr-2">
-                            <img src="/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-                        </div>
-                        <div class="info">
-                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                                <span>
-                                    Admin
-                                    <span class="user-level">Administrator</span>
-                                    <span class="caret"></span>
-                                </span>
-                            </a>
-                            <div class="clearfix"></div>
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                            <div class="collapse in" id="collapseExample">
-                                <ul class="nav">
-                                    <li>
-                                        <a href="#profile">
-                                            <span class="link-collapse">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#settings">
-                                            <span class="link-collapse">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">CRUD Impact</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item {{$menu==='dashboard'?'active':null}}">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menu
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item {{$menu==='char'?'active':null}}">
+                <a class="nav-link" href="/char">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Character Table</span></a>
+            </li>
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
                             </div>
                         </div>
-                    </div>
-                    <ul class="nav nav-primary">
-                        <li class="nav-item active">
-                            <a href="/">
-                                <i class="fas fa-home"></i>
-                                <p>Dashboard</p>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ardalepa Muhamad</span>
+                                <img class="img-profile rounded-circle" src="/sbadmin2/img/pp.jpg">
                             </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a href="widgets.html">
-                                <i class="fas fa-users"></i>
-                                <p>Characters</p>
-                            </a>
-                        </li>
+
                     </ul>
-                </div>
-            </div>
-        </div>
-        <!-- End Sidebar -->
 
-        <div class="main-panel">
-            <div class="content">
-                <div class="page-inner">
-                    <div class="page-header">
-                        <h4 class="page-title">Dashboard</h4>
-                        <ul class="breadcrumbs">
-                            <li class="nav-home">
-                                <a href="/">
-                                    <i class="flaticon-home"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        @yield('content')
+                </nav>
+                <!-- End of Topbar -->
 
-                    </div>
-                </div>
-            </div>
-            <footer class="footer">
+                <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.themekita.com">
-                                    ThemeKita
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Help
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Licenses
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright ml-auto">
-                        2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
-                            href="https://www.themekita.com">ThemeKita</a>
+                    @yield('content')
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
+            <!-- End of Footer -->
+
         </div>
+        <!-- End of Content Wrapper -->
 
     </div>
-    <!--   Core JS Files   -->
-    <script src="/js/core/jquery.3.2.1.min.js"></script>
-    <script src="/js/core/popper.min.js"></script>
-    <script src="/js/core/bootstrap.min.js"></script>
+    <!-- End of Page Wrapper -->
 
-    <!-- jQuery UI -->
-    <script src="/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-    <!-- jQuery Scrollbar -->
-    <script src="/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="/sbadmin2/vendor/jquery/jquery.min.js"></script>
+    <script src="/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Chart JS -->
-    <script src="/js/plugin/chart.js/chart.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/sbadmin2/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- jQuery Sparkline -->
-    <script src="/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="/sbadmin2/js/sb-admin-2.min.js"></script>
 
-    <!-- Chart Circle -->
-    <script src="/js/plugin/chart-circle/circles.min.js"></script>
+    @if ($menu==='char')
+    <!-- Page level plugins -->
+    <script src="/sbadmin2/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                serverSide: true,
+                processing: true,
+                ajax: "/data",
+                columns: [
+                    {
+                        data: 'name',
+                        name: 'name'
+                    },
+                    {
+                        data: 'rarity',
+                        name: 'rarity'
+                    },
+                    {
+                        data: 'weapon',
+                        name: 'weapon'
+                    },
+                    {
+                        data: 'vision',
+                        name: 'vision'
+                    },
+                    {
+                        data: 'birthday',
+                        name: 'birthday'
+                    },
+                    {
+                        data: 'constellation',
+                        name: 'constellation'
+                    },
+                    {
+                        data: 'region',
+                        name: 'region'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        sortable: false,
+                        searchable: false
+                    },
+                ],
+                order: [
+                    [0, 'asc']
+                ]
+            });
+        });
+    </script>
 
-    <!-- Datatables -->
-    <script src="/js/plugin/datatables/datatables.min.js"></script>
+    @else
 
-    <!-- Bootstrap Notify -->
-    <script src="/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
-    <!-- jQuery Vector Maps -->
-    <script src="/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-    <script src="/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-
-    <!-- Sweet Alert -->
-    <script src="/js/plugin/sweetalert/sweetalert.min.js"></script>
-
-    <!-- Atlantis JS -->
-    <script src="/js/atlantis.min.js"></script>
+    @endif
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

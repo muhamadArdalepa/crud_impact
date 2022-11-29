@@ -69,20 +69,9 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Application Locale Configuration
-    |--------------------------------------------------------------------------
-    |
-    | The application locale determines the default locale that will be used
-    | by the translation service provider. You are free to set this value
-    | to any of the locales which will be supported by the application.
-    |
-    */
-
-    'locale' => 'en',
+    // 'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,8 +96,8 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
+    'faker_locale' => 'id_ID',
 
-    'faker_locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
